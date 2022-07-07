@@ -1,0 +1,15 @@
+alias k8s="kubectl"
+
+// how to create pod
+k8s run nginx --image=nginx
+// how to create deployment
+k8s create deployment nginx-deployment --image=nginx
+// how to scale deployment
+k8s scale deployment nginx-deployment --replicas=4
+// how to create service
+k8s expose deployment nginx-deployment --port=8080 --target-port=80
+// how to delete deployment
+k8s delete deployment nginx-deployment
+// how to delete service
+k8s delete service nginx-deployment
+

@@ -1,0 +1,19 @@
+kubectl cluster-info
+
+kubectl get nodes
+
+kubectl get pods
+
+kubectl get namespace
+
+kubectl get pods --namespace=kube-system
+
+kubectl run nginx --image=nginx
+
+kubectl describe pod nginx
+
+docker ps |grep nginx
+
+kubectl get pods -o wide
+
+kubectl delete pod nginx

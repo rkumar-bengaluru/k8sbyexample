@@ -1,0 +1,7 @@
+# start minikube
+minikube start --driver=docker
+# find assinged IP for minikube node
+minikube ip // 192.168.49.2
+minikube ssh
+
+

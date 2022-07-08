@@ -3,13 +3,20 @@ alias k8s="kubectl"
 // how to create pod
 k8s run nginx --image=nginx
 // how to create deployment
-k8s create deployment nginx-deployment --image=nginx
+k8s create deployment k8s-node-service-deployment --image=k8s-node-service
 // how to scale deployment
-k8s scale deployment nginx-deployment --replicas=4
-// how to create service
-k8s expose deployment nginx-deployment --port=8080 --target-port=80
+k8s scale deployment k8s-node-service-deployment --replicas=4
+// how to create service with ClusterIP
+k8s expose deployment k8s-node-service-deployment --port=8080 --target-port=80
+// how to create service with NodePort IP
+k8s expose deployment k8s-node-service-deployment --type=NodePort --port=8080 --target-port=80
+// how to create service with Load Balancer IP
+k8s expose deployment k8s-node-service-deployment --type=LoadBalancer --port=8080 --target-port=80
 // how to delete deployment
-k8s delete deployment nginx-deployment
+k8s delete deployment k8s-node-service-deployment
 // how to delete service
-k8s delete service nginx-deployment
+k8s delete service k8s-node-service-deployment
 
+// how to update image in deployment
+k8s set image deployment k8s-node-service-deployment k8s-node-service=rkumarbengaluru/k8s-node-service:2.0.0
+k8s rollout status deploy k8s-node-service-deployment

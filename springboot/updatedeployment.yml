@@ -1,0 +1,2 @@
+# kubectl set image deployment/prilor-hrms prilor-hrms=rkumarbengaluru/prilor-hrms:1.0.4-SNAPSHOT
+# kubectl rollout status deployment/prilor-hrms

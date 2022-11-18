@@ -9,3 +9,5 @@ spec:
   minReplicas: 1
   maxReplicas: 2
   targetCPUUtilizationPercentage: 50
+
+#kubectl autoscale rs frontend --max=10 --min=3 --cpu-percent=50
